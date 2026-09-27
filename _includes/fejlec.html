@@ -1,0 +1,14 @@
+<header class="fejlec">
+  <a class="ugras" href="#tartalom">Ugrás a tartalomra</a>
+  <p class="blognev"><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></p>
+  <p class="alcim">{{ site.description | escape }}</p>
+  {%- if site.data.menu %}
+  <nav aria-label="Főmenü">
+    <ul>
+      {%- for elem in site.data.menu %}
+      <li><a href="{{ elem.url | relative_url }}"{% if page.url == elem.url %} aria-current="page"{% endif %}>{{ elem.title | escape }}</a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  {%- endif %}
+</header>

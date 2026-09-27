@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<h1>{{ page.title | escape }}</h1>
+{{ content }}
+<ul>
+  {%- for post in site.posts %}
+  {%- if post.categories contains page.kategoria %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> – <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y. %m. %d." }}</time></li>
+  {%- endif %}
+  {%- endfor %}
+</ul>

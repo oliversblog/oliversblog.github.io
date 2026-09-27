@@ -1,0 +1,65 @@
+title: "Egyszerűbben is lehet"
+description: "Szolgáltatások, programok, technikák a gyors és egyszerű munkavégzéshez"
+url: "https://oliversblog.github.io"
+baseurl: ""
+lang: hu
+locale: hu_HU
+timezone: Europe/Budapest
+author:
+  name: "Oliver"
+
+permalink: /:title/
+paginate: 10
+paginate_path: /oldal/:num/
+
+# Építés alatt minden oldal noindex; élesítéskor false.
+site_noindex: true
+# Amíg üres, nincs mérőkód.
+gtm_id: ""
+webmaster_verifications:
+  google: ""
+
+markdown: kramdown
+highlighter: rouge
+
+# A GitHub Pages alapból a jekyll-theme-primer témát és a jövőbeli dátumú
+# posztok megjelenítését kapcsolja be; saját téma van, és a jövőbeli poszt
+# csak a dátuma után jelenjen meg.
+theme: null
+future: false
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-paginate
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  - scope:
+      path: kategoria
+    values:
+      layout: kategoria
+
+# Ezek soha ne kerüljenek ki az oldalra.
+# A "[A-Z]*.md" a gyökérben lévő nagybetűs Markdown-fájlokat zárja ki
+# (pl. README.md és a helyi munkafájlok); a tartalom slugjai kisbetűsek.
+exclude:
+  - docs/
+  - _design/
+  - _import/
+  - "[A-Z]*.md"
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - node_modules/

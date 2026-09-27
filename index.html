@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Egyszerűbben is lehet"
+---
+<h1>{{ site.title | escape }}</h1>
+{%- if paginator.posts.size > 0 %}
+<ul>
+  {%- for post in paginator.posts %}
+  <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> – <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y. %m. %d." }}</time></li>
+  {%- endfor %}
+</ul>
+{%- if paginator.total_pages > 1 %}
+<nav aria-label="Lapozás">
+  {%- if paginator.previous_page %}<a href="{{ paginator.previous_page_path | relative_url }}">Újabb bejegyzések</a>{% endif %}
+  {%- if paginator.next_page %} <a href="{{ paginator.next_page_path | relative_url }}">Régebbi bejegyzések</a>{% endif %}
+</nav>
+{%- endif %}
+{%- else %}
+<p>Még nincs bejegyzés.</p>
+{%- endif %}

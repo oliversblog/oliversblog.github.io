@@ -1,0 +1,15 @@
+# Belső anyagok – soha nem kerülnek gitbe
+docs/
+_design/
+_import/
+
+# Ruby-csomagok és build
+vendor/
+.bundle/
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+
+# macOS
+.DS_Store

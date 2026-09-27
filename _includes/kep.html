@@ -1,0 +1,17 @@
+{%- comment -%}
+Képbeszúrás: {% include kep.html src="/assets/images/<slug>/kep.jpg" alt="…" caption="…" width="1600" height="1000" %}
+A borítóképnél kiemelt=true: azonnal betölt, nem lusta.
+{%- endcomment -%}
+{%- assign kep_alt = include.alt | strip -%}
+<figure class="kep">
+  <img src="{{ include.src | relative_url }}" alt="{{ kep_alt | escape }}"
+    {%- if include.width %} width="{{ include.width }}"{% endif %}
+    {%- if include.height %} height="{{ include.height }}"{% endif %}
+    {%- if include.kiemelt %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+  {%- if kep_alt == "" and jekyll.environment == "development" %}
+  <p class="kep-hiba" style="background:#b00020;color:#fff;padding:.5em;font-weight:bold">HIÁNYZIK AZ ALT SZÖVEG: {{ include.src }}</p>
+  {%- endif %}
+  {%- if include.caption %}
+  <figcaption>{{ include.caption }}</figcaption>
+  {%- endif %}
+</figure>

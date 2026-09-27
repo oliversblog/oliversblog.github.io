@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page.title and page.url != "/" %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
+{%- if page.description %}
+<meta name="description" content="{{ page.description | escape }}">
+{%- elsif page.url == "/" %}
+<meta name="description" content="{{ site.description | escape }}">
+{%- endif %}
+{%- if site.site_noindex or page.robots == "noindex" %}
+<meta name="robots" content="noindex, follow">
+{%- endif %}
+<link rel="canonical" href="{{ page.url | absolute_url }}">

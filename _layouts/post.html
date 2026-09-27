@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="poszt-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y. %m. %d." }}</time>
+    {%- if page.last_modified_at %} · Frissítve: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%Y. %m. %d." }}</time>{% endif %}
+    {%- if page.categories.size > 0 %} · {{ page.categories | join: ", " | escape }}{% endif %}
+  </p>
+  {{ content }}
+  {%- if page.tags.size > 0 %}
+  <p class="cimkek">Címkék: {{ page.tags | join: ", " | escape }}</p>
+  {%- endif %}
+</article>
