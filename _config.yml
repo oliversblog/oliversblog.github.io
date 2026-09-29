@@ -16,10 +16,9 @@ paginate_path: /oldal/:num/
 site_noindex: false
 # Amíg üres, nincs mérőkód.
 gtm_id: ""
-# Search Console (4.4 lépés): az ellenőrző kód ide kerül. Amíg üres (nem ""),
-# nincs google-site-verification meta.
+# Search Console (4.4 lépés): URL-előtag tulajdon, HTML-címkés ellenőrzés.
 webmaster_verifications:
-  google:
+  google: "EU7sUYwDEGrCh4JR2U8hHbfAs0L9DPxOLWskJXBFQkE"
 
 markdown: kramdown
 highlighter: rouge
