@@ -16,8 +16,10 @@ paginate_path: /oldal/:num/
 site_noindex: true
 # Amíg üres, nincs mérőkód.
 gtm_id: ""
+# Search Console (4.4 lépés): az ellenőrző kód ide kerül. Amíg üres (nem ""),
+# nincs google-site-verification meta.
 webmaster_verifications:
-  google: ""
+  google:
 
 markdown: kramdown
 highlighter: rouge
@@ -31,6 +33,10 @@ sass:
 # csak a dátuma után jelenjen meg.
 theme: null
 future: false
+
+# Hírcsatorna: kivonat + link a posztra (O8) – a teljes szöveg a blogon olvasható.
+feed:
+  excerpt_only: true
 
 plugins:
   - jekyll-seo-tag

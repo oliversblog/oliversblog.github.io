@@ -1,0 +1,45 @@
+{%- comment -%}
+Meta címkék és strukturált adat. Az alapot a jekyll-seo-tag adja (a <title> saját, a head.html-ben);
+a kimenetéből kimaradnak a HTML-megjegyzések, a generator meta és az üres sorok.
+- Ha egy posztnak nincs description-je, a jekyll-seo-tag a teljes kivonatot tenné be –
+  helyette az első bekezdés kb. 155 karakterre vágva, szóhatáron.
+- A JSON-LD-ből kimarad a saját image.fokusz mező, és az "imageObject" típus helyesen "ImageObject".
+{%- endcomment -%}
+{%- assign rovid_leiras = nil -%}
+{%- if page.collection == "posts" and page.excerpt -%}
+  {%- unless page.description and page.description != "" -%}
+    {%- assign rovid_leiras = page.excerpt | strip_html | normalize_whitespace -%}
+    {%- if rovid_leiras.size > 155 -%}
+      {%- assign rovid_leiras = rovid_leiras | truncate: 155, "" | split: " " | pop | join: " " | append: "…" -%}
+    {%- endif -%}
+    {%- assign rovid_leiras = rovid_leiras | escape -%}
+  {%- endunless -%}
+{%- endif -%}
+{%- capture fokusz_elotte %},"fokusz":{{ page.image.fokusz | jsonify }}{% endcapture -%}
+{%- capture fokusz_utana %}"fokusz":{{ page.image.fokusz | jsonify }},{% endcapture -%}
+{%- capture seo_kimenet %}{% seo title=false %}{% endcapture -%}
+{%- assign seo_sorok = seo_kimenet | newline_to_br | split: "<br />" -%}
+{%- capture seo_blokk -%}
+{%- for sor in seo_sorok -%}
+  {%- assign seo_sor = sor | strip -%}
+  {%- if seo_sor == "" or seo_sor contains "<!--" or seo_sor contains 'name="generator"' %}{% continue %}{% endif -%}
+  {%- if rovid_leiras and seo_sor contains 'name="description"' -%}
+    {%- capture seo_sor %}<meta name="description" content="{{ rovid_leiras }}" />{% endcapture -%}
+  {%- elsif rovid_leiras and seo_sor contains 'property="og:description"' -%}
+    {%- capture seo_sor %}<meta property="og:description" content="{{ rovid_leiras }}" />{% endcapture -%}
+  {%- elsif seo_sor contains '"@context"' -%}
+    {%- assign seo_sor = seo_sor | replace: '"@type":"imageObject"', '"@type":"ImageObject"' -%}
+    {%- if page.image.fokusz -%}
+      {%- assign seo_sor = seo_sor | remove: fokusz_elotte | remove: fokusz_utana -%}
+    {%- endif -%}
+  {%- endif %}
+{{ seo_sor }}
+{%- endfor %}
+{%- if page.collection == "posts" %}
+<meta property="article:modified_time" content="{{ page.last_modified_at | default: page.date | date_to_xmlschema }}">
+{%- if page.categories.size > 0 %}
+<meta property="article:section" content="{{ page.categories.first | escape }}">
+{%- endif %}
+{%- endif %}
+{%- endcapture %}
+{{ seo_blokk | strip -}}

@@ -1,0 +1,17 @@
+{%- comment -%}
+Morzsamenü strukturált adatként (BreadcrumbList) a posztokon és a kategóriaoldalakon:
+Kezdőlap › Kategória › Poszt. A kategória csak akkor szerepel, ha van hozzá kategóriaoldal.
+{%- endcomment -%}
+{%- if page.collection == "posts" or page.layout == "kategoria" -%}
+{%- if page.collection == "posts" -%}
+  {%- assign morzsa_kat = site.pages | where: "kategoria", page.categories.first | first -%}
+{%- else -%}
+  {%- assign morzsa_kat = page -%}
+{%- endif %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Kezdőlap","item":{{ "/" | absolute_url | jsonify }}}
+{%- if morzsa_kat %},{"@type":"ListItem","position":2,"name":{{ morzsa_kat.title | jsonify }},"item":{{ morzsa_kat.url | absolute_url | jsonify }}}{% endif -%}
+{%- if page.collection == "posts" %},{"@type":"ListItem","position":{% if morzsa_kat %}3{% else %}2{% endif %},"name":{{ page.title | jsonify }},"item":{{ page.url | absolute_url | jsonify }}}{% endif -%}
+]}
+</script>
+{%- endif -%}
