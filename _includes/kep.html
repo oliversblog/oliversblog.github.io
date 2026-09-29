@@ -22,15 +22,21 @@ a srcset-be csak a ténylegesen meglévők kerülnek, az eredeti a legnagyobb je
 {%- if kep_hely == "tartalom" and kep_h > kep_w -%}{%- assign kep_allo = true -%}{%- endif -%}
 
 {%- case kep_hely -%}
-{%- when "borito", "kartya" -%}
-{%- assign kep_sizes = "(min-width: 69.5em) 48rem, (min-width: 64em) calc(100vw - 21.5rem), (min-width: 48em) 45rem, (min-width: 40em) calc(100vw - 3rem), 100vw" -%}
+{%- when "borito" -%}
+{%- assign kep_sizes = "(min-width: 96em) 72rem, (min-width: 80em) calc(100vw - 24rem), (min-width: 64em) calc(100vw - 21.5rem), (min-width: 48em) 45rem, (min-width: 40em) calc(100vw - 3rem), 100vw" -%}
+{%- when "kartya" -%}
+{%- if include.kiemelt -%}
+{%- assign kep_sizes = "(min-width: 96em) 37rem, (min-width: 90em) calc((100vw - 34.5rem) * .6), (min-width: 80em) calc((100vw - 34.5rem) / 2), (min-width: 64em) calc(100vw - 21.5rem), (min-width: 48em) 45rem, (min-width: 40em) calc(100vw - 3rem), 100vw" -%}
+{%- else -%}
+{%- assign kep_sizes = "(min-width: 96em) 31rem, (min-width: 80em) calc((100vw - 34.5rem) / 2), (min-width: 64em) calc(100vw - 21.5rem), (min-width: 48em) 45rem, (min-width: 40em) calc(100vw - 3rem), 100vw" -%}
+{%- endif -%}
 {%- when "kompakt" -%}
 {%- assign kep_sizes = "(min-width: 40em) 12rem, calc(100vw - 2.5rem)" -%}
 {%- else -%}
 {%- if kep_allo -%}
 {%- assign kep_sizes = "(min-width: 40em) 26rem, calc(100vw - 2.5rem)" -%}
 {%- else -%}
-{%- assign kep_sizes = "(min-width: 69.5em) 40rem, (min-width: 64em) calc(100vw - 29.5rem), (min-width: 48em) 40rem, (min-width: 40em) calc(100vw - 8rem), calc(100vw - 2.5rem)" -%}
+{%- assign kep_sizes = "(min-width: 90em) 60rem, (min-width: 80em) 42rem, (min-width: 69.5em) 40rem, (min-width: 64em) calc(100vw - 29.5rem), (min-width: 48em) 40rem, (min-width: 40em) calc(100vw - 8rem), calc(100vw - 2.5rem)" -%}
 {%- endif -%}
 {%- endcase -%}
 

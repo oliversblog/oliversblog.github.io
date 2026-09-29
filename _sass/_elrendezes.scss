@@ -66,7 +66,15 @@ html:not(.js) .menu-gomb { display: none; }
 }
 @media (min-width: $asztali) {
   .fo { padding: 2.5rem 2.5rem 2.5rem 0; }
-  .lap { --lap-belso: 4rem; max-width: var(--lap-szel); margin-inline: 0; padding-bottom: 4rem; }
+  .lap { --lap-belso: 4rem; max-width: none; margin-inline: 0; padding-bottom: 4rem; }
+  // A lap kitölti a helyet; a tartalom középre igazított hasáb, a sorhossz nem nő vele.
+  .belso { max-width: calc(var(--szoveg-szel) + 2 * var(--lap-belso)); margin-inline: auto; }
+}
+// Széles kijelzőn a lap legfeljebb 72rem, középen; a betű 18 → 20 px-re nő
+// (a clamp() a régi Sass-fordító miatt szövegként megy át).
+@media (min-width: $szeles) {
+  .fo { padding: 2.5rem; }
+  .lap { max-width: var(--lap-szel); margin-inline: auto; font-size: #{"clamp(1.125rem, .625rem + .625vw, 1.25rem)"}; }
 }
 
 // Lábléc – a lap alatt, sötét alapon
@@ -75,4 +83,5 @@ html:not(.js) .menu-gomb { display: none; }
 .lablec a { color: var(--sav-szoveg); }
 .lablec a:hover { color: var(--akcent); }
 @media (min-width: $tablet) { .lablec { max-width: 45rem; margin-inline: auto; padding-inline: 0; } }
-@media (min-width: $asztali) { .lablec { max-width: var(--lap-szel); margin-inline: 0; padding-top: 1.25rem; } }
+@media (min-width: $asztali) { .lablec { max-width: none; margin-inline: 0; padding-top: 1.25rem; } }
+@media (min-width: $szeles) { .lablec { max-width: var(--lap-szel); margin-inline: auto; } }

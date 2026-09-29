@@ -2,6 +2,8 @@
 // Töréspontok (a html betűmérete 100%, erre épülnek a képek sizes értékei is)
 $tablet: 40em;   // 640 px
 $asztali: 64em;  // 1024 px
+$szeles: 80em;   // 1280 px – a lap középre kerül, a betű nőni kezd
+$nagy: 90em;     // 1440 px – a fekvő képek kilógnak a szöveghasábból
 
 // Világos mód
 :root {
@@ -39,8 +41,8 @@ $asztali: 64em;  // 1024 px
 
   // méretek
   --sav-szel: 19rem;
-  --lap-szel: 48rem;           // 40rem szöveg + 2 × 4rem
-  --szoveg-szel: 40rem;        // ≈ 70 karakter 18 px-es Latóval
+  --lap-szel: 72rem;           // a lap legnagyobb szélessége (széles kijelzőn)
+  --szoveg-szel: 35.5em;       // ≈ 70 karakter; em-ben, így a betűvel együtt nő (18 px-nél 640 px)
   --lap-belso: 1.25rem;
 }
 

@@ -1,7 +1,7 @@
 {%- comment -%}
 Posztkártya a kezdőlapon: {% include posztkartya.html poszt=poszt kiemelt=forloop.first %}
 {%- endcomment -%}
-<article class="kartya">
+<article class="kartya{% if include.kiemelt %} kartya--kiemelt{% endif %}">
   {%- if include.poszt.image.path %}
   <a class="kartya-kep" href="{{ include.poszt.url | relative_url }}" tabindex="-1" aria-hidden="true">
     {%- include kep.html hely="kartya" src=include.poszt.image.path width=include.poszt.image.width height=include.poszt.image.height fokusz=include.poszt.image.fokusz alt="" kiemelt=include.kiemelt %}

@@ -3,13 +3,15 @@ layout: default
 ---
 <section>
   <h1 class="lathatatlan">Legfrissebb bejegyzések</h1>
-  {%- for poszt in paginator.posts %}
-  {% include posztkartya.html poszt=poszt kiemelt=forloop.first %}
-  {%- else %}
-  <div class="belso oldal-fej">
-    <p class="bevezeto bevezeto--halvany">Még nincs bejegyzés.</p>
+  <div class="kartyak">
+    {%- for poszt in paginator.posts %}
+    {% include posztkartya.html poszt=poszt kiemelt=forloop.first %}
+    {%- else %}
+    <div class="belso oldal-fej">
+      <p class="bevezeto bevezeto--halvany">Még nincs bejegyzés.</p>
+    </div>
+    {%- endfor %}
   </div>
-  {%- endfor %}
   {%- if paginator.total_pages > 1 %}
   <div class="belso">
     {% include lapozo.html %}

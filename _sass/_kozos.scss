@@ -16,6 +16,7 @@
   margin: .35rem 0 .75rem; color: var(--cim);
   font: 700 #{"clamp(1.875rem, 1.35rem + 2.1vw, 2.5rem)"}/1.2 var(--betu-szoveg); letter-spacing: -.005em;
 }
+@media (min-width: $nagy) { .oldal-cim, .poszt-cim { font-size: 2.75rem; } }
 .bevezeto { font-size: 1.1875rem; color: var(--szoveg); max-width: var(--szoveg-szel); }
 .bevezeto--halvany { font-size: 1.0625rem; color: var(--halvany); }
 
@@ -31,6 +32,23 @@
 .kartya-cim a:hover { color: var(--link); }
 .kivonat { margin: 0 0 1rem; }
 .tovabb { font-weight: 700; font-size: .9375rem; }
+
+// Széles kijelzőn: az első (kiemelt) kártya fekvő elrendezésű, a többi két hasábban
+@media (min-width: $szeles) {
+  .kartyak { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem 2.5rem; padding: 3rem var(--lap-belso) 0; }
+  .kartya, .kartya:last-child { margin: 0; padding: 0; border: 0; }
+  .kartya .belso { padding-inline: 0; max-width: none; }
+  .kartya--kiemelt {
+    grid-column: 1 / -1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem; align-items: center;
+    padding-bottom: 3.5rem; border-bottom: 1px solid var(--vonal);
+  }
+  .kartya--kiemelt:last-child { padding-bottom: 0; border-bottom: 0; }
+  .kartya--kiemelt .kartya-torzs { padding-top: 0; }
+}
+@media (min-width: $nagy) {
+  .kartya--kiemelt { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .kartya--kiemelt .kartya-cim { font-size: 2.25rem; }
+}
 
 // Kompakt lista (kategóriaoldal)
 .kompakt { list-style: none; margin: 0; padding: 0; }

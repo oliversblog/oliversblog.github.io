@@ -31,6 +31,8 @@
 .kep img { margin-inline: auto; }
 // A min() a régi Sass-fordító miatt szövegként megy át.
 .kep--allo img { max-width: #{"min(26rem, 100%)"}; }
+// Széles kijelzőn a fekvő képek kilógnak a szöveghasábból
+@media (min-width: $nagy) { .tartalom .kep:not(.kep--allo) { margin-inline: -8rem; } }
 .kep figcaption { margin-top: .6rem; color: var(--halvany); font-size: .875rem; line-height: 1.5; text-align: center; }
 
 // Kód
