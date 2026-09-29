@@ -12,8 +12,8 @@ permalink: /:title/
 paginate: 10
 paginate_path: /oldal/:num/
 
-# Építés alatt minden oldal noindex; élesítéskor false.
-site_noindex: true
+# Élesítve (4.2): false. Egyes oldalak noindexe a front matterben (robots: noindex).
+site_noindex: false
 # Amíg üres, nincs mérőkód.
 gtm_id: ""
 # Search Console (4.4 lépés): az ellenőrző kód ide kerül. Amíg üres (nem ""),
