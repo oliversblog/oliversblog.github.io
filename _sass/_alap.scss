@@ -1,0 +1,27 @@
+@charset "UTF-8";
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--hatter);
+  color: var(--szoveg);
+  font: 400 1.0625rem/1.7 var(--betu-szoveg);
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: $tablet) { body { font-size: 1.125rem; } }
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: .18em; }
+a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--fokusz); outline-offset: 2px; border-radius: 2px; }
+.oldalsav :focus-visible, .lablec :focus-visible { outline-color: var(--akcent); }
+
+// „Ugrás a tartalomra” – fókuszkor jelenik meg
+.ugras {
+  position: absolute; left: 1rem; top: -100px; z-index: 10;
+  background: var(--lap); color: var(--link); font-weight: 700;
+  padding: .6rem 1rem; border-radius: 4px; text-decoration: none;
+}
+.ugras:focus { top: 1rem; }
+
+// Csak képernyőolvasónak
+.lathatatlan { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

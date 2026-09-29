@@ -1,0 +1,20 @@
+---
+layout: default
+title: "Archívum"
+permalink: /archivum/
+---
+<div class="belso">
+  <header class="oldal-fej">
+    <h1 class="oldal-cim">Archívum</h1>
+    <p class="bevezeto bevezeto--halvany">Minden bejegyzés, évek szerint.</p>
+  </header>
+  {%- assign evek = site.posts | group_by_exp: "poszt", "poszt.date | date: '%Y'" %}
+  {%- for ev in evek %}
+  <h2 class="ev">{{ ev.name }}</h2>
+  <ul class="archivum">
+    {%- for poszt in ev.items %}
+    <li><time datetime="{{ poszt.date | date: "%Y-%m-%d" }}">{% include datum.html datum=poszt.date forma="honapnap" %}</time> <span><a href="{{ poszt.url | relative_url }}">{{ poszt.title | escape }}</a>{% if poszt.categories.size > 0 %} <span class="kat-kicsi">· {{ poszt.categories.first | escape }}</span>{% endif %}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</div>

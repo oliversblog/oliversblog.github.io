@@ -1,14 +1,20 @@
-<header class="fejlec">
-  <a class="ugras" href="#tartalom">Ugrás a tartalomra</a>
-  <p class="blognev"><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></p>
-  <p class="alcim">{{ site.description | escape }}</p>
-  {%- if site.data.menu %}
-  <nav aria-label="Főmenü">
+<header class="oldalsav" id="oldalsav">
+  <div class="oldalsav-fej">
+    <div>
+      <p class="blognev"><a href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></p>
+      <p class="alcim">{{ site.description | escape }}</p>
+    </div>
+    <button class="menu-gomb" type="button" aria-expanded="false" aria-controls="fomenu">
+      <svg class="ikon-nyit" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <svg class="ikon-zar" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Menü
+    </button>
+  </div>
+  <nav class="fomenu" id="fomenu" aria-label="Főmenü">
     <ul>
       {%- for elem in site.data.menu %}
       <li><a href="{{ elem.url | relative_url }}"{% if page.url == elem.url %} aria-current="page"{% endif %}>{{ elem.title | escape }}</a></li>
       {%- endfor %}
     </ul>
   </nav>
-  {%- endif %}
 </header>

@@ -1,0 +1,13 @@
+<nav class="lapozo" aria-label="Lapozás">
+  {%- if paginator.previous_page %}
+  <a href="{{ paginator.previous_page_path | relative_url }}">← Újabb bejegyzések</a>
+  {%- else %}
+  <span class="ures" aria-hidden="true">← Újabb bejegyzések</span>
+  {%- endif %}
+  <span class="allas">{{ paginator.page }}. oldal / {{ paginator.total_pages }}</span>
+  {%- if paginator.next_page %}
+  <a href="{{ paginator.next_page_path | relative_url }}">Régebbi bejegyzések →</a>
+  {%- else %}
+  <span class="ures" aria-hidden="true">Régebbi bejegyzések →</span>
+  {%- endif %}
+</nav>

@@ -22,6 +22,10 @@ webmaster_verifications:
 markdown: kramdown
 highlighter: rouge
 
+# Egyetlen tömörített CSS-fájl (assets/css/main.scss + _sass/)
+sass:
+  style: compressed
+
 # A GitHub Pages alapból a jekyll-theme-primer témát és a jövőbeli dátumú
 # posztok megjelenítését kapcsolja be; saját téma van, és a jövőbeli poszt
 # csak a dátuma után jelenjen meg.

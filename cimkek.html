@@ -1,0 +1,23 @@
+---
+layout: default
+title: "Címkék"
+permalink: /cimkek/
+robots: noindex
+---
+<div class="belso">
+  <header class="oldal-fej">
+    <h1 class="oldal-cim">Címkék</h1>
+  </header>
+  {%- capture cimke_nevek %}{% for cimke in site.tags %}{{ cimke[0] }}|{% endfor %}{% endcapture %}
+  {%- assign cimke_nevek = cimke_nevek | split: "|" | sort_natural %}
+  {%- for cimke in cimke_nevek %}
+  <h2 class="ev" id="{{ cimke | slugify: "latin" }}">{{ cimke | escape }}</h2>
+  <ul class="archivum archivum--evvel">
+    {%- for poszt in site.tags[cimke] %}
+    <li><time datetime="{{ poszt.date | date: "%Y-%m-%d" }}">{% include datum.html datum=poszt.date %}</time> <span><a href="{{ poszt.url | relative_url }}">{{ poszt.title | escape }}</a></span></li>
+    {%- endfor %}
+  </ul>
+  {%- else %}
+  <p class="bevezeto bevezeto--halvany">Még nincs címke.</p>
+  {%- endfor %}
+</div>

@@ -7,6 +7,9 @@ categories: ["Eszközök"]
 image:
   path: /assets/images/casio-g-shock-vs-apple-watch-valtani-akartam/img_3462-1.jpeg
   alt: "Casio G-Shock Rangeman GW-9400 a csuklón, a kijelzőn a légnyomás-változás jelzése"
+  width: 1500
+  height: 2000
+  fokusz: "50% 55%"
 ---
 
 ## Előzmények
@@ -84,7 +87,7 @@ Az évek alatt számos változata született ennek az órának, és a Casio megv
 
 Az egy elképesztően szerethető tulajdonsága az órának, hogy a **gombokra nagy hangsúlyt fektettek**, ezért azoknak a minősége kimagasló, és téli kesztyűben is könnyen megnyomható. Tuti nem fogja a homok, sár vagy bármi más külső hatás tönkretenni.
 
-{% include kep.html src="/assets/images/casio-g-shock-vs-apple-watch-valtani-akartam/img5.webp" alt="Casio G-Shock GW-9400 gombok - forrás: Casio.com" caption="Forrás: Casio.com" width="800" height="450" %}
+{% include kep.html src="/assets/images/casio-g-shock-vs-apple-watch-valtani-akartam/img5.jpeg" alt="Casio G-Shock GW-9400 gombok - forrás: Casio.com" caption="Forrás: Casio.com" width="800" height="450" %}
 
 {% include kep.html src="https://www.casio.com/content/experience-fragments/casio/en/feature/timepiece/watch/g-shock/rangeman/gw_9400/features/master/_jcr_content/root/container_1438014674/container_copy/image.casiocoreimg.png/1616724276801/img6-m.png" alt="Casio G-Shock GW-9400 Rangeman szenzor gomb felépítés - forrás: Casio.com" caption="Forrás: Casio.com" width="800" height="450" %}
 

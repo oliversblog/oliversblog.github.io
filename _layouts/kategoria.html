@@ -1,12 +1,33 @@
 ---
 layout: default
 ---
-<h1>{{ page.title | escape }}</h1>
+<div class="belso">
+  <header class="oldal-fej">
+    <p class="meta">Kategória</p>
+    <h1 class="oldal-cim">{{ page.title | escape }}</h1>
+    {%- assign kategoria_bevezeto = content | strip %}
+    {%- if kategoria_bevezeto != "" %}
+    <div class="bevezeto">
 {{ content }}
-<ul>
-  {%- for post in site.posts %}
-  {%- if post.categories contains page.kategoria %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a> – <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%Y. %m. %d." }}</time></li>
-  {%- endif %}
-  {%- endfor %}
-</ul>
+    </div>
+    {%- endif %}
+  </header>
+  <ul class="kompakt">
+    {%- for poszt in site.posts %}
+    {%- if poszt.categories contains page.kategoria %}
+    <li{% unless poszt.image.path %} class="kep-nelkul"{% endunless %}>
+      {%- if poszt.image.path %}
+      <a class="kartya-kep" href="{{ poszt.url | relative_url }}" tabindex="-1" aria-hidden="true">
+        {%- include kep.html hely="kompakt" src=poszt.image.path width=poszt.image.width height=poszt.image.height fokusz=poszt.image.fokusz alt="" %}
+      </a>
+      {%- endif %}
+      <div>
+        <p class="meta"><time datetime="{{ poszt.date | date_to_xmlschema }}">{% include datum.html datum=poszt.date %}</time> · {% include olvasasi-ido.html tartalom=poszt.content %}</p>
+        <h2><a href="{{ poszt.url | relative_url }}">{{ poszt.title | escape }}</a></h2>
+        <p class="kivonat">{% include kivonat.html poszt=poszt %}</p>
+      </div>
+    </li>
+    {%- endif %}
+    {%- endfor %}
+  </ul>
+</div>

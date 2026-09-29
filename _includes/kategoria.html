@@ -1,0 +1,12 @@
+{%- comment -%}
+A kategória neve – link, ha van hozzá kategóriaoldal (kategoria/<slug>.md, benne: kategoria: "<név>").
+fejlec=true: link nélkül is kiemelve (a posztoldal fejlécében).
+{%- endcomment -%}
+{%- assign kategoria_oldal = site.pages | where: "kategoria", include.nev | first -%}
+{%- if kategoria_oldal -%}
+<a class="kat" href="{{ kategoria_oldal.url | relative_url }}">{{ include.nev | escape }}</a>
+{%- elsif include.fejlec -%}
+<span class="kat">{{ include.nev | escape }}</span>
+{%- else -%}
+{{ include.nev | escape }}
+{%- endif -%}

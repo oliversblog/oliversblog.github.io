@@ -1,0 +1,7 @@
+# A főmenü; a sorrend a fájlbeli sorrend.
+- title: "Kezdőlap"
+  url: /
+- title: "GTD"
+  url: /kategoria/gtd/
+- title: "Archívum"
+  url: /archivum/

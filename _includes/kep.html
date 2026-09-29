@@ -1,17 +1,102 @@
 {%- comment -%}
-Képbeszúrás: {% include kep.html src="/assets/images/<slug>/kep.jpg" alt="…" caption="…" width="1600" height="1000" %}
-A borítóképnél kiemelt=true: azonnal betölt, nem lusta.
+Képbeszúrás:
+  {% include kep.html src="/assets/images/<slug>/kep.jpg" alt="…" caption="…" width="1600" height="1000" %}
+Paraméterek:
+  src, alt, caption
+  width, height – a kép valódi mérete pixelben (helyi képnél kötelező)
+  kiemelt       – true: azonnal betölt (borító, első kártya); különben lusta
+  hely          – tartalom (alapértelmezés) | borito | kartya | kompakt; ebből jön a sizes és a keret
+  fokusz        – a 16:9-es kivágás közepe (object-position), pl. "50% 55%"
+A kisebb változatok (<név>-480w.<kit>, -800w, -1200w, -1600w) ugyanabban a mappában vannak;
+a srcset-be csak a ténylegesen meglévők kerülnek, az eredeti a legnagyobb jelölt.
 {%- endcomment -%}
+{%- assign kep_hely = include.hely | default: "tartalom" -%}
+{%- assign kep_src = include.src | strip -%}
 {%- assign kep_alt = include.alt | strip -%}
-<figure class="kep">
-  <img src="{{ include.src | relative_url }}" alt="{{ kep_alt | escape }}"
-    {%- if include.width %} width="{{ include.width }}"{% endif %}
-    {%- if include.height %} height="{{ include.height }}"{% endif %}
-    {%- if include.kiemelt %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
-  {%- if kep_alt == "" and jekyll.environment == "development" %}
-  <p class="kep-hiba" style="background:#b00020;color:#fff;padding:.5em;font-weight:bold">HIÁNYZIK AZ ALT SZÖVEG: {{ include.src }}</p>
-  {%- endif %}
+{%- assign kep_w = include.width | plus: 0 -%}
+{%- assign kep_h = include.height | plus: 0 -%}
+{%- assign kep_helyi = false -%}
+{%- assign kep_eleje = kep_src | slice: 0 -%}
+{%- if kep_eleje == "/" -%}{%- assign kep_helyi = true -%}{%- endif -%}
+{%- assign kep_allo = false -%}
+{%- if kep_hely == "tartalom" and kep_h > kep_w -%}{%- assign kep_allo = true -%}{%- endif -%}
+
+{%- case kep_hely -%}
+{%- when "borito", "kartya" -%}
+{%- assign kep_sizes = "(min-width: 69.5em) 48rem, (min-width: 64em) calc(100vw - 21.5rem), (min-width: 48em) 45rem, (min-width: 40em) calc(100vw - 3rem), 100vw" -%}
+{%- when "kompakt" -%}
+{%- assign kep_sizes = "(min-width: 40em) 12rem, calc(100vw - 2.5rem)" -%}
+{%- else -%}
+{%- if kep_allo -%}
+{%- assign kep_sizes = "(min-width: 40em) 26rem, calc(100vw - 2.5rem)" -%}
+{%- else -%}
+{%- assign kep_sizes = "(min-width: 69.5em) 40rem, (min-width: 64em) calc(100vw - 29.5rem), (min-width: 48em) 40rem, (min-width: 40em) calc(100vw - 8rem), calc(100vw - 2.5rem)" -%}
+{%- endif -%}
+{%- endcase -%}
+
+{%- assign kep_srcset = "" -%}
+{%- assign kep_kozepes = "" -%}
+{%- if kep_helyi and kep_w > 0 -%}
+{%- assign kep_kit = kep_src | split: "." | last -%}
+{%- assign kep_alap_hossz = kep_src.size | minus: kep_kit.size | minus: 1 -%}
+{%- assign kep_alap = kep_src | slice: 0, kep_alap_hossz -%}
+{%- assign kep_szelessegek = "480,800,1200,1600" | split: "," -%}
+{%- for kep_v in kep_szelessegek -%}
+{%- assign kep_vn = kep_v | plus: 0 -%}
+{%- if kep_vn < kep_w -%}
+{%- capture kep_valtozat %}{{ kep_alap }}-{{ kep_v }}w.{{ kep_kit }}{% endcapture -%}
+{%- assign kep_fajl = site.static_files | where: "path", kep_valtozat | first -%}
+{%- if kep_fajl -%}
+{%- capture kep_srcset %}{{ kep_srcset }}{{ kep_valtozat | relative_url }} {{ kep_v }}w, {% endcapture -%}
+{%- if kep_v == "800" -%}{%- assign kep_kozepes = kep_valtozat -%}{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+{%- if kep_srcset != "" -%}
+{%- capture kep_srcset %}{{ kep_srcset }}{{ kep_src | relative_url }} {{ kep_w }}w{% endcapture -%}
+{%- endif -%}
+{%- endif -%}
+
+{%- if kep_kozepes != "" -%}
+{%- assign kep_src_ki = kep_kozepes | relative_url -%}
+{%- elsif kep_helyi -%}
+{%- assign kep_src_ki = kep_src | relative_url -%}
+{%- else -%}
+{%- assign kep_src_ki = kep_src -%}
+{%- endif -%}
+
+{%- capture kep_img -%}
+<img src="{{ kep_src_ki }}"
+  {%- if kep_srcset != "" %} srcset="{{ kep_srcset }}" sizes="{{ kep_sizes }}"{% endif %}
+  {%- if kep_w > 0 %} width="{{ kep_w }}"{% endif %}
+  {%- if kep_h > 0 %} height="{{ kep_h }}"{% endif %} alt="{{ kep_alt | escape }}"
+  {%- if include.kiemelt %} fetchpriority="high"{% else %} loading="lazy" decoding="async"{% endif %}
+  {%- if include.fokusz %} style="object-position: {{ include.fokusz | escape }}"{% endif %}>
+{%- endcapture -%}
+
+{%- capture kep_hiba -%}
+{%- if jekyll.environment == "development" -%}
+{%- if kep_alt == "" and kep_hely != "kartya" and kep_hely != "kompakt" %}
+<p style="background:#b00020;color:#fff;padding:.5em;font-weight:bold">HIÁNYZIK AZ ALT SZÖVEG: {{ kep_src }}</p>
+{%- endif -%}
+{%- if kep_helyi -%}
+{%- if kep_w == 0 or kep_h == 0 %}
+<p style="background:#b00020;color:#fff;padding:.5em;font-weight:bold">HIÁNYZIK A WIDTH/HEIGHT: {{ kep_src }}</p>
+{%- endif -%}
+{%- endif -%}
+{%- endif -%}
+{%- endcapture -%}
+
+{%- case kep_hely -%}
+{%- when "kartya", "kompakt" -%}
+{{ kep_img }}{{ kep_hiba }}
+{%- when "borito" -%}
+<figure class="poszt-borito">{{ kep_img }}</figure>{{ kep_hiba }}
+{%- else -%}
+<figure class="kep{% if kep_allo %} kep--allo{% endif %}">
+  {{ kep_img }}{{ kep_hiba }}
   {%- if include.caption %}
   <figcaption>{{ include.caption }}</figcaption>
   {%- endif %}
 </figure>
+{%- endcase -%}

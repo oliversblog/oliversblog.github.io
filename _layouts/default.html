@@ -4,10 +4,30 @@
 {% include head.html %}
 </head>
 <body>
-{% include fejlec.html %}
-<main id="tartalom">
+<div class="oldal">
+  <a class="ugras" href="#tartalom">Ugrás a tartalomra</a>
+  {% include fejlec.html %}
+  <div class="fo">
+    <main class="lap" id="tartalom">
 {{ content }}
-</main>
-{% include lablec.html %}
+    </main>
+    {% include lablec.html %}
+  </div>
+</div>
+<script>
+(function () {
+  var gomb = document.querySelector('.menu-gomb');
+  var sav = document.querySelector('.oldalsav');
+  if (!gomb || !sav) return;
+  gomb.addEventListener('click', function () {
+    var nyitva = gomb.getAttribute('aria-expanded') === 'true';
+    gomb.setAttribute('aria-expanded', String(!nyitva));
+    sav.classList.toggle('nyitva', !nyitva);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && sav.classList.contains('nyitva')) { gomb.click(); gomb.focus(); }
+  });
+})();
+</script>
 </body>
 </html>

@@ -1,0 +1,8 @@
+{%- comment -%}
+Kivonat a posztlistákhoz: a description mező; ha nincs, az első bekezdés kb. 40 szóra vágva.
+{%- endcomment -%}
+{%- if include.poszt.description -%}
+{{ include.poszt.description | escape }}
+{%- else -%}
+{{ include.poszt.excerpt | strip_html | normalize_whitespace | truncatewords: 40 }}
+{%- endif -%}

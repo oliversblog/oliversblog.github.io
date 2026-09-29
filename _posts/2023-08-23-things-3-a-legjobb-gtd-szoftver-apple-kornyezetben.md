@@ -6,6 +6,8 @@ categories: ["GTD"]
 image:
   path: /assets/images/things-3-a-legjobb-gtd-szoftver-apple-kornyezetben/website-hero-all-new-things.png
   alt: "A Things 3 bemutatóképe: az alkalmazás logója és az oldalsó menü (Inbox, Today, Upcoming, Anytime, Someday)"
+  width: 1920
+  height: 1440
 excerpt_separator: "<!--more-->"
 ---
 

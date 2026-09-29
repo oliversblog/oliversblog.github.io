@@ -7,6 +7,8 @@ categories: ["GTD"]
 image:
   path: /assets/images/gtd-amit-egyszer-kitalalok-azzal-biztosan-kezdek-is-valamit/pexels-photo-669996.jpeg
   alt: "Laptop, asztali lámpa és telefon egy sötét szoba íróasztalán"
+  width: 1880
+  height: 1251
 excerpt_separator: "<!--more-->"
 ---
 

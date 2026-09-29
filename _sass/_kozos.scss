@@ -1,0 +1,53 @@
+@charset "UTF-8";
+// Meta sor (dátum · kategória · olvasási idő)
+.meta {
+  margin: 0; color: var(--halvany);
+  font-size: .8125rem; line-height: 1.6; letter-spacing: .06em; text-transform: uppercase;
+}
+.meta a { color: inherit; text-decoration: none; }
+.meta a:hover { color: var(--link); text-decoration: underline; }
+.meta .kat { color: var(--link); font-weight: 700; }
+
+// Oldalfej és címek
+.oldal-fej { padding-top: 2.5rem; margin-bottom: 2rem; }
+@media (min-width: $tablet) { .oldal-fej { padding-top: 3.5rem; } }
+// A clamp() a régi Sass-fordító miatt szövegként megy át.
+.oldal-cim, .poszt-cim {
+  margin: .35rem 0 .75rem; color: var(--cim);
+  font: 700 #{"clamp(1.875rem, 1.35rem + 2.1vw, 2.5rem)"}/1.2 var(--betu-szoveg); letter-spacing: -.005em;
+}
+.bevezeto { font-size: 1.1875rem; color: var(--szoveg); max-width: var(--szoveg-szel); }
+.bevezeto--halvany { font-size: 1.0625rem; color: var(--halvany); }
+
+// Posztkártya (kezdőlap)
+.kartya { padding-bottom: 2rem; margin-bottom: 2rem; border-bottom: 1px solid var(--vonal); }
+.kartya:last-child { border-bottom: 0; margin-bottom: 0; }
+.kartya-kep { display: block; aspect-ratio: 16 / 9; overflow: hidden; background: var(--vonal); }
+.kartya-kep img, .poszt-borito img { width: 100%; height: 100%; object-fit: cover; }
+.kartya-torzs { padding-top: 1.75rem; }
+.kartya-cim { margin: .35rem 0 .75rem; color: var(--cim); font: 700 1.5rem/1.25 var(--betu-szoveg); }
+@media (min-width: $tablet) { .kartya-cim { font-size: 1.875rem; } }
+.kartya-cim a { color: inherit; text-decoration: none; }
+.kartya-cim a:hover { color: var(--link); }
+.kivonat { margin: 0 0 1rem; }
+.tovabb { font-weight: 700; font-size: .9375rem; }
+
+// Kompakt lista (kategóriaoldal)
+.kompakt { list-style: none; margin: 0; padding: 0; }
+.kompakt li { padding: 1.5rem 0; border-top: 1px solid var(--vonal); }
+.kompakt .kartya-kep { margin-bottom: 1rem; }
+.kompakt h2 { margin: .25rem 0 .4rem; font: 700 1.25rem/1.3 var(--betu-szoveg); color: var(--cim); }
+.kompakt h2 a { color: inherit; text-decoration: none; }
+.kompakt h2 a:hover { color: var(--link); }
+.kompakt p.kivonat { margin: 0; font-size: 1rem; }
+@media (min-width: $tablet) {
+  .kompakt li { display: grid; grid-template-columns: 12rem minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+  .kompakt li.kep-nelkul { display: block; }
+  .kompakt .kartya-kep { margin-bottom: 0; }
+}
+
+// Lapozó (kezdőlap, 10 posztonként)
+.lapozo { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--vonal); font-size: .9375rem; }
+.lapozo .allas { color: var(--halvany); font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; }
+.lapozo a { font-weight: 700; text-decoration: none; }
+.lapozo .ures { visibility: hidden; }

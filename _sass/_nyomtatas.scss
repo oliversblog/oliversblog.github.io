@@ -1,0 +1,7 @@
+@media print {
+  body { background: #fff; color: #000; }
+  .oldalsav .fomenu, .menu-gomb, .szomszedok, .lapozo, .lablec { display: none !important; }
+  .oldalsav { position: static; height: auto; padding: 0 0 1rem; background: none; color: #000; }
+  .fo { padding: 0; }
+  .lap { max-width: none; }
+}

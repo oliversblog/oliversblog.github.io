@@ -2,14 +2,52 @@
 layout: default
 ---
 <article>
-  <h1>{{ page.title | escape }}</h1>
-  <p class="poszt-meta">
-    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y. %m. %d." }}</time>
-    {%- if page.last_modified_at %} · Frissítve: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: "%Y. %m. %d." }}</time>{% endif %}
-    {%- if page.categories.size > 0 %} · {{ page.categories | join: ", " | escape }}{% endif %}
-  </p>
-  {{ content }}
-  {%- if page.tags.size > 0 %}
-  <p class="cimkek">Címkék: {{ page.tags | join: ", " | escape }}</p>
+  {%- if page.image.path %}
+  {% include kep.html hely="borito" src=page.image.path alt=page.image.alt width=page.image.width height=page.image.height fokusz=page.image.fokusz kiemelt=true %}
   {%- endif %}
+  <div class="belso">
+    <header class="poszt-fej">
+      {%- if page.categories.size > 0 %}
+      <p class="meta">{% include kategoria.html nev=page.categories.first fejlec=true %}</p>
+      {%- endif %}
+      <h1 class="poszt-cim">{{ page.title | escape }}</h1>
+      <p class="meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{% include datum.html datum=page.date %}</time>
+        {%- if page.last_modified_at %}
+        · Frissítve: <time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{% include datum.html datum=page.last_modified_at %}</time>
+        {%- endif %}
+        · {% include olvasasi-ido.html tartalom=content %}
+      </p>
+    </header>
+
+    <div class="tartalom">
+{{ content }}
+    </div>
+
+    {%- if page.tags.size > 0 %}
+    <ul class="cimkek" aria-label="Címkék">
+      <li class="felirat">Címkék</li>
+      {%- for cimke in page.tags %}
+      <li><a href="{{ "/cimkek/" | relative_url }}#{{ cimke | slugify: "latin" }}">{{ cimke | escape }}</a></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+
+    {%- if page.previous or page.next %}
+    <nav class="szomszedok" aria-label="Bejegyzések">
+      {%- if page.previous %}
+      <a class="elozo" href="{{ page.previous.url | relative_url }}">
+        <span class="irany">← Előző bejegyzés</span>
+        <span class="cim">{{ page.previous.title | escape }}</span>
+      </a>
+      {%- endif %}
+      {%- if page.next %}
+      <a class="kovetkezo" href="{{ page.next.url | relative_url }}">
+        <span class="irany">Következő bejegyzés →</span>
+        <span class="cim">{{ page.next.title | escape }}</span>
+      </a>
+      {%- endif %}
+    </nav>
+    {%- endif %}
+  </div>
 </article>

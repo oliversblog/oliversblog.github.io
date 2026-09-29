@@ -1,0 +1,6 @@
+{%- comment -%}
+Olvasási idő: szószám ÷ 200, felfelé kerekítve. {% include olvasasi-ido.html tartalom=content %}
+{%- endcomment -%}
+{%- assign olvasas_szavak = include.tartalom | strip_html | number_of_words -%}
+{%- assign olvasas_perc = olvasas_szavak | divided_by: 200.0 | ceil | at_least: 1 -%}
+{{ olvasas_perc }} perc olvasás

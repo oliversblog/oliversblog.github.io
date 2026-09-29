@@ -1,0 +1,16 @@
+{%- comment -%}
+Posztkártya a kezdőlapon: {% include posztkartya.html poszt=poszt kiemelt=forloop.first %}
+{%- endcomment -%}
+<article class="kartya">
+  {%- if include.poszt.image.path %}
+  <a class="kartya-kep" href="{{ include.poszt.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- include kep.html hely="kartya" src=include.poszt.image.path width=include.poszt.image.width height=include.poszt.image.height fokusz=include.poszt.image.fokusz alt="" kiemelt=include.kiemelt %}
+  </a>
+  {%- endif %}
+  <div class="kartya-torzs belso">
+    <p class="meta"><time datetime="{{ include.poszt.date | date_to_xmlschema }}">{% include datum.html datum=include.poszt.date %}</time>{% if include.poszt.categories.size > 0 %} · {% include kategoria.html nev=include.poszt.categories.first %}{% endif %} · {% include olvasasi-ido.html tartalom=include.poszt.content %}</p>
+    <h2 class="kartya-cim"><a href="{{ include.poszt.url | relative_url }}">{{ include.poszt.title | escape }}</a></h2>
+    <p class="kivonat">{% include kivonat.html poszt=include.poszt %}</p>
+    <a class="tovabb" href="{{ include.poszt.url | relative_url }}">Tovább olvasom<span class="lathatatlan">: {{ include.poszt.title | escape }}</span> →</a>
+  </div>
+</article>

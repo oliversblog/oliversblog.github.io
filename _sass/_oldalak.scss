@@ -1,0 +1,27 @@
+@charset "UTF-8";
+// Archívum (és a címkék oldala)
+.ev { margin: 2.5rem 0 .25rem; color: var(--halvany); font: 700 .875rem/1.4 var(--betu-marka); letter-spacing: .12em; }
+.ev:first-of-type { margin-top: 0; }
+.archivum { list-style: none; margin: 0; padding: 0; max-width: var(--szoveg-szel); }
+.archivum li { padding: .75rem 0; border-bottom: 1px solid var(--vonal); }
+.archivum time { display: block; color: var(--halvany); font-size: .875rem; font-variant-numeric: tabular-nums; }
+.archivum a { color: var(--cim); font-weight: 700; text-decoration: none; }
+.archivum a:hover { color: var(--link); text-decoration: underline; }
+.archivum .kat-kicsi { color: var(--halvany); font-size: .875rem; }
+@media (min-width: $tablet) {
+  .archivum li { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 1rem; align-items: baseline; }
+  .archivum--evvel li { grid-template-columns: 11rem minmax(0, 1fr); }
+  .archivum time { display: inline; }
+}
+
+// Kategóriák listája
+.kategoriak { list-style: none; margin: 0; padding: 0; max-width: var(--szoveg-szel); }
+.kategoriak li { padding: 1rem 0; border-bottom: 1px solid var(--vonal); }
+.kategoriak a, .kategoriak .nev { color: var(--cim); font-weight: 700; text-decoration: none; }
+.kategoriak a:hover { color: var(--link); text-decoration: underline; }
+.kategoriak .darab { color: var(--halvany); font-size: .875rem; }
+.kategoriak p { margin: .25rem 0 0; font-size: 1rem; }
+
+// 404
+.hiba-kod { margin: 0; color: var(--link); font: 700 3.5rem/1 var(--betu-marka); letter-spacing: .04em; }
+.hiba-linkek { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: 1.5rem; font-weight: 700; }

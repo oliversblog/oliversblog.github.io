@@ -1,0 +1,12 @@
+{%- comment -%}
+Magyar dátum: {% include datum.html datum=page.date %} → „2024. január 28.”
+forma="honapnap" → „január 28.”
+{%- endcomment -%}
+{%- assign datum_honapok = "január,február,március,április,május,június,július,augusztus,szeptember,október,november,december" | split: "," -%}
+{%- assign datum_ho = include.datum | date: "%-m" | minus: 1 -%}
+{%- assign datum_nap = include.datum | date: "%-d" -%}
+{%- if include.forma == "honapnap" -%}
+{{ datum_honapok[datum_ho] }} {{ datum_nap }}.
+{%- else -%}
+{{ include.datum | date: "%Y" }}. {{ datum_honapok[datum_ho] }} {{ datum_nap }}.
+{%- endif -%}

@@ -1,0 +1,28 @@
+---
+layout: default
+title: "Kategóriák"
+permalink: /kategoriak/
+---
+<div class="belso">
+  <header class="oldal-fej">
+    <h1 class="oldal-cim">Kategóriák</h1>
+  </header>
+  <ul class="kategoriak">
+    {%- capture kat_nevek %}{% for kat in site.categories %}{{ kat[0] }}|{% endfor %}{% endcapture %}
+    {%- assign kat_nevek = kat_nevek | split: "|" | sort_natural %}
+    {%- for kat in kat_nevek %}
+    {%- assign kat_oldal = site.pages | where: "kategoria", kat | first %}
+    <li>
+      {%- if kat_oldal %}
+      <a href="{{ kat_oldal.url | relative_url }}">{{ kat | escape }}</a>
+      {%- else %}
+      <span class="nev">{{ kat | escape }}</span>
+      {%- endif %}
+      <span class="darab">· {{ site.categories[kat].size }} bejegyzés</span>
+      {%- if kat_oldal.description %}
+      <p>{{ kat_oldal.description | escape }}</p>
+      {%- endif %}
+    </li>
+    {%- endfor %}
+  </ul>
+</div>

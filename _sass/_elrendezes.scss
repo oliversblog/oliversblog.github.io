@@ -1,0 +1,78 @@
+@charset "UTF-8";
+// Asztalon: bal oldali sáv + lap; mobilon és tableten a sáv felső fejléc
+@media (min-width: $asztali) {
+  .oldal { display: grid; grid-template-columns: var(--sav-szel) minmax(0, 1fr); align-items: start; }
+}
+
+// Oldalsáv
+.oldalsav { background: var(--hatter); color: var(--sav-szoveg); padding: 1rem 1.25rem; }
+.oldalsav-fej { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; }
+.blognev { margin: 0; font: 700 1.125rem/1.2 var(--betu-marka); text-transform: uppercase; letter-spacing: .04em; }
+.blognev a { color: inherit; text-decoration: none; }
+.blognev a:hover { color: var(--akcent); }
+.alcim { margin: .4rem 0 0; color: var(--sav-halvany); font-size: .875rem; line-height: 1.5; }
+
+// Mobilmenü gombja (JS nélkül rejtve, a menü ilyenkor mindig nyitva)
+.menu-gomb {
+  display: inline-flex; align-items: center; gap: .5rem; flex: none;
+  margin: 0; padding: .5rem .75rem; min-height: 44px;
+  background: var(--panel); color: var(--sav-szoveg);
+  border: 0; border-radius: 4px; font: 700 .875rem/1 var(--betu-szoveg); cursor: pointer;
+}
+.menu-gomb svg { width: 20px; height: 20px; }
+.menu-gomb .ikon-zar { display: none; }
+.menu-gomb[aria-expanded="true"] .ikon-nyit { display: none; }
+.menu-gomb[aria-expanded="true"] .ikon-zar { display: block; }
+html:not(.js) .menu-gomb { display: none; }
+
+// Főmenü
+.fomenu { background: var(--panel); margin: 1rem -1.25rem -1rem; padding: .5rem 1.25rem .75rem; }
+.js .fomenu { display: none; }
+.js .oldalsav.nyitva .fomenu { display: block; }
+.fomenu ul { list-style: none; margin: 0; padding: 0; }
+.fomenu a {
+  display: block; padding: .6rem 0;
+  color: var(--sav-szoveg); font-weight: 700; font-size: 1.0625rem; text-decoration: none;
+}
+.fomenu li + li a { border-top: 1px solid rgba(255, 255, 255, .07); }
+.fomenu a:hover, .fomenu a[aria-current="page"] { color: var(--akcent); }
+
+@media (min-width: $tablet) {
+  .oldalsav { padding: 1.25rem 1.5rem; }
+  .blognev { font-size: 1.375rem; }
+  .fomenu { margin: 1.25rem -1.5rem -1.25rem; padding-inline: 1.5rem; }
+}
+@media (min-width: $asztali) {
+  .oldalsav {
+    position: sticky; top: 0; height: 100vh; overflow-y: auto;
+    padding: 3.5rem 2.5rem 2rem;
+  }
+  .oldalsav-fej { display: block; }
+  .blognev { font-size: 1.625rem; line-height: 1.25; }
+  .alcim { margin-top: .75rem; font-size: .9375rem; }
+  .menu-gomb { display: none; }
+  .js .fomenu, .fomenu { display: block; margin: 2.5rem -2.5rem 0; padding: 1.25rem 2.5rem; }
+  .fomenu li + li a { border-top: 0; }
+  .fomenu a { padding: .35rem 0; }
+}
+
+// Fő terület + fehér lap
+.fo { padding: 0; }
+.lap { background: var(--lap); padding-bottom: 3rem; }
+.belso { padding-inline: var(--lap-belso); }
+@media (min-width: $tablet) {
+  .fo { padding: 1.5rem; }
+  .lap { --lap-belso: 2.5rem; max-width: 45rem; margin-inline: auto; }
+}
+@media (min-width: $asztali) {
+  .fo { padding: 2.5rem 2.5rem 2.5rem 0; }
+  .lap { --lap-belso: 4rem; max-width: var(--lap-szel); margin-inline: 0; padding-bottom: 4rem; }
+}
+
+// Lábléc – a lap alatt, sötét alapon
+.lablec { color: var(--sav-halvany); font-size: .875rem; padding: 1.5rem 1.25rem 2rem; }
+.lablec p { margin: 0 0 .25rem; }
+.lablec a { color: var(--sav-szoveg); }
+.lablec a:hover { color: var(--akcent); }
+@media (min-width: $tablet) { .lablec { max-width: 45rem; margin-inline: auto; padding-inline: 0; } }
+@media (min-width: $asztali) { .lablec { max-width: var(--lap-szel); margin-inline: 0; padding-top: 1.25rem; } }

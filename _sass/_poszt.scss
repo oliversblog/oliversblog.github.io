@@ -1,0 +1,61 @@
+@charset "UTF-8";
+// Borító és fej
+.poszt-borito { aspect-ratio: 16 / 9; overflow: hidden; background: var(--vonal); margin: 0; }
+.poszt-fej { padding-top: 2.25rem; margin-bottom: 2rem; }
+@media (min-width: $tablet) { .poszt-fej { padding-top: 2.75rem; } }
+
+// Szöveg
+.tartalom { max-width: var(--szoveg-szel); }
+.tartalom > :first-child { margin-top: 0; }
+.tartalom h2 { margin: 2.4em 0 .7em; color: var(--cim); font: 700 1.5rem/1.3 var(--betu-szoveg); }
+.tartalom h3 { margin: 2em 0 .5em; color: var(--cim); font: 700 1.25rem/1.35 var(--betu-szoveg); }
+@media (min-width: $tablet) { .tartalom h2 { font-size: 1.625rem; } }
+.tartalom p, .tartalom ul, .tartalom ol, .tartalom table { margin: 0 0 1.25em; }
+.tartalom ul, .tartalom ol { padding-left: 1.4em; }
+.tartalom li { margin-bottom: .35em; }
+.tartalom li::marker { color: var(--link); }
+.tartalom strong { color: var(--cim); }
+.tartalom blockquote {
+  margin: 2em 0; padding: 1.1rem 1.5rem;
+  background: var(--idezet-hatter); color: var(--idezet-szoveg);
+  border-left: 4px solid var(--link); font-style: italic;
+}
+.tartalom blockquote p:last-child { margin-bottom: 0; }
+.tartalom hr { border: 0; border-top: 1px solid var(--vonal); margin: 2.5rem 0; }
+.tartalom table { width: 100%; border-collapse: collapse; font-size: .9375rem; display: block; overflow-x: auto; }
+.tartalom th, .tartalom td { padding: .5rem .75rem; border-bottom: 1px solid var(--vonal); text-align: left; }
+.tartalom th { color: var(--cim); }
+
+// Képek a szövegben (_includes/kep.html)
+.kep { margin: 2.25rem 0; }
+.kep img { margin-inline: auto; }
+// A min() a régi Sass-fordító miatt szövegként megy át.
+.kep--allo img { max-width: #{"min(26rem, 100%)"}; }
+.kep figcaption { margin-top: .6rem; color: var(--halvany); font-size: .875rem; line-height: 1.5; text-align: center; }
+
+// Kód
+code { font-family: var(--betu-kod); font-size: .875em; background: var(--kod-hatter); padding: .1em .35em; border-radius: 3px; }
+pre { margin: 0 0 1.5em; padding: 1rem 1.25rem; overflow-x: auto; background: var(--kod-hatter); border-radius: 4px; font-size: .875rem; line-height: 1.6; }
+pre code { background: none; padding: 0; font-size: inherit; }
+.highlight .c, .highlight .c1, .highlight .cm { color: var(--kod-komment); font-style: italic; }
+.highlight .k, .highlight .kd, .highlight .kc, .highlight .nt { color: var(--kod-kulcsszo); }
+.highlight .s, .highlight .s1, .highlight .s2 { color: var(--kod-szoveg); }
+.highlight .m, .highlight .mi, .highlight .mf { color: var(--kod-szam); }
+.highlight .nf, .highlight .na, .highlight .nx { color: var(--kod-nev); }
+
+// Címkék
+.cimkek { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; list-style: none; margin: 2.5rem 0 0; padding: 0; }
+.cimkek .felirat { color: var(--halvany); font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; margin-right: .25rem; }
+.cimkek a { display: inline-block; padding: .2rem .75rem; border-radius: 999px; background: var(--cimke-hatter); color: var(--szoveg); font-size: .875rem; text-decoration: none; }
+.cimkek a:hover { color: var(--link); }
+
+// Előző / következő
+.szomszedok { display: grid; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--vonal); }
+@media (min-width: $tablet) { .szomszedok { grid-template-columns: 1fr 1fr; } }
+.szomszedok a { display: block; padding: 1rem 1.25rem; border: 1px solid var(--vonal); border-radius: 4px; text-decoration: none; }
+.szomszedok a:hover { border-color: var(--link); }
+.szomszedok .irany { display: block; color: var(--halvany); font-size: .8125rem; letter-spacing: .06em; text-transform: uppercase; }
+.szomszedok .cim { display: block; margin-top: .2rem; color: var(--cim); font-weight: 700; line-height: 1.35; }
+.szomszedok a:hover .cim { color: var(--link); }
+.szomszedok .kovetkezo { text-align: right; }
+@media (min-width: $tablet) { .szomszedok .kovetkezo { grid-column: 2; } }
