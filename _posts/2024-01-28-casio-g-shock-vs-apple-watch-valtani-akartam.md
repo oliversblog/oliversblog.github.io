@@ -1,5 +1,5 @@
 ---
-title: "Casio G-Shock vs Apple Watch - Váltani akartam"
+title: "Casio G-Shock vs Apple Watch – Váltani akartam"
 date: 2024-01-28 01:46:33 +0100
 last_modified_at: 2025-06-10 20:41:21 +0200
 description: "Miért nem vettem új Apple Watch-ot, és miért lett helyette Casio G-Shock Rangeman (GW-9400)? Szempontok, ABC-funkciók és tapasztalatok túrán, hegyen."
@@ -41,7 +41,7 @@ Egy bármilyen gyártó nem teheti meg, hogy akár 10 évig biztosítson szoftve
 
 Megszületett a döntés: nem lesz okosóra, legalábbis egy darabig!
 
-## Casio G-Shock - GW-9400-1ER - Rangeman
+## Casio G-Shock – GW-9400-1ER – Rangeman
 
 Ezen a ponton megszületett az elhatározás és ebből következően a döntés: **kell egy Casio G-Shock!**
 
@@ -76,7 +76,7 @@ Eddig nagyon úgy néz ki, hogy kiváló döntést hoztam, mert akárhányszor r
 
 Az, hogy ez az óra miért számít már-már legendásnak a Casio G-Shock kínálatából, arra már sokan sokféleképpen válaszoltak, és azt kell, hogy mondjam, erre szerintem egyszerűbb a válasz: **számos helyzetben, sok ember számára bizonyított ez az óra.** Ennyi! Szerintem semmi többet nem kell ebbe belelátni, mert **bár egy kiválóan sikerült darabról beszélünk, viszont nem ez a legjobb választás mindenki számára**. Ez az óra tényleg azoknak szól elsősorban, akik valamilyen extrémsportot űznek vagy rendszeresen túráznak, stb. Akik hosszabb-rövidebb időre a természetben vannak, és ennek következtében az időjárás viszontagságai az órát sem kímélik. Legyen por, homok, hó, eső, szél, stb. az szinte 100%, hogy nem ezek fogják tönkretenni az órát
 
-### Összeszerelés - Anyaghasználat
+### Összeszerelés – Anyaghasználat
 
 Ezt nem is nagyon akarom túlcizellálni, mert nem vagyok se ipari formatervező, se gyártástechnológiában jártas személy! :)<br>
 Az biztos, hogy teljes mértékben hozza a G-Shock óráktól elvártat az ütésállóság és az időjárás viszontagságaival szembeni ellenállóság tekintetében! Nem nagyon hiszem, hogy van olyan szitu amit én túlélnék de ez az óra már nem! :)
@@ -91,7 +91,7 @@ Az egy elképesztően szerethető tulajdonsága az órának, hogy a **gombokra n
 
 {% include kep.html src="https://www.casio.com/content/experience-fragments/casio/en/feature/timepiece/watch/g-shock/rangeman/gw_9400/features/master/_jcr_content/root/container_1438014674/container_copy/image.casiocoreimg.png/1616724276801/img6-m.png" alt="Casio G-Shock GW-9400 Rangeman szenzor gomb felépítés - forrás: Casio.com" caption="Forrás: Casio.com" width="800" height="450" %}
 
-### ABC funkciók - Altimeter, Barometer, Compass
+### ABC funkciók – Altimeter, Barometer, Compass
 
 Számos olyan óra van ami tudja mérni a magasságot, a légnyomást és iránytűvel is rendelkeznek, azonban ezeknek a használhatóságában és megbízhatóságában elképesztő különbségek vannak. Ha egy eszközön "dísznek" vannak ezek a funkciók, akkor a használhatóságuk is nagyjából hasonló mértékben használhatóak.
 
@@ -157,14 +157,14 @@ Ezek azok a mért adatok **amiket egy gombnyomással** **manuálisan** (jobb fel
 
 Amikor elindulok egy túrára/mászásra előtte biztos ami biztos átnézem, hogy nincsenek-e mentések (ha vannak akkor törlöm őket). Így tudom, hogy biztosan csak azzal a túrával (vagy az adott szakaszával) kapcsolatos adatokat látom már ami az automatikus rögzítéseket illeti.
 
-- Idő - Recall: Amikor elindulok / megérkezek egy előre meghatározott ponthoz (pl.: tervezett pihenő)
-- Altimeter - Recall: Amikor elindulok és frissítettem a referenciaértéket, akkor mentek egyet. **Utána** ugyanúgy minden pihenőnél, illetve akkor is amikor újra betájolom magam illetve változtatok az előre tervezett/gondolt irányhoz
-- Barometer - Recall: A légnyomás és hőmérséklet adatokat ritkán szoktam menteni, mert az esetek nagy számában az aktuális érték amire kíváncsi vagyok adott esetben. A historikusan mért légnyomásadatok ellenőrizhetőek a *grafikonon*.
-- Iránytű - Recall: Ugyanúgy amikor **elindulok** akkor a következő célhoz vezető irányt mentem el, így egy kitérő esetén gyorsan meg tudom nézni, hogy a helyes irányba álltam-e vissza.
+- Idő – Recall: Amikor elindulok / megérkezek egy előre meghatározott ponthoz (pl.: tervezett pihenő)
+- Altimeter – Recall: Amikor elindulok és frissítettem a referenciaértéket, akkor mentek egyet. **Utána** ugyanúgy minden pihenőnél, illetve akkor is amikor újra betájolom magam illetve változtatok az előre tervezett/gondolt irányhoz
+- Barometer – Recall: A légnyomás és hőmérséklet adatokat ritkán szoktam menteni, mert az esetek nagy számában az aktuális érték amire kíváncsi vagyok adott esetben. A historikusan mért légnyomásadatok ellenőrizhetőek a *grafikonon*.
+- Iránytű – Recall: Ugyanúgy amikor **elindulok** akkor a következő célhoz vezető irányt mentem el, így egy kitérő esetén gyorsan meg tudom nézni, hogy a helyes irányba álltam-e vissza.
 
 Mivel az óra képes **40db** különálló adatot rögzíteni, ezért ezt a 19. -nél már kissé nehézkes fejben tartani. Ezért én úgy szoktam, hogy amikor megérkezek egy adott pontra ahová akartam, akkor ott mentem a pontos időt. Ez mint egy "könyvjelző" is szolgál, mert az időt több mérési adat mentésénél is rögzíti az óra!
 
-### R/C - Received
+### R/C – Received
 
 A pontos idő szinkronizálása az nem Bluetooth -on keresztül történik, hanem a 6db atomóra közül a hozzá legközelebb esővel szinkronizál. Ez Magyarországon annyit jelent, hogy a Németországban található Mainflingen -ben található atomórával szinkronizál akár automatikusan minden nap. Ezek után kijelenthetjük, hogy ez az óra tényleg *atompontos*! :)
 

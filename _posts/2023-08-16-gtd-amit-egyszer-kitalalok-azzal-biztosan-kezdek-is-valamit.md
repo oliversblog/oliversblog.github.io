@@ -1,5 +1,5 @@
 ---
-title: "GTD - Amit egyszer kitalálok, azzal biztosan kezdek is valamit"
+title: "GTD – Amit egyszer kitalálok, azzal biztosan kezdek is valamit"
 date: 2023-08-16 22:05:00 +0200
 last_modified_at: 2023-08-20 10:29:15 +0200
 description: "Évekig próbálgattam feladatkezelési módszereket, de csak a GTD maradt meg. Mi fogott meg benne, hol csúsztam ki belőle, és miért lett végül a mentőövem."
@@ -12,12 +12,12 @@ image:
 excerpt_separator: "<!--more-->"
 ---
 
-- [Kezdetek - Volt valami érdekes már első ránézésre a GTD -ben](#Kezdetek)
+- [Kezdetek – Volt valami érdekes már első ránézésre a GTD -ben](#Kezdetek)
 - [Első lépések](#elso-lepesek)
 - [Néhány hónap elteltével](#nehany-honap)
-- [Végeredmény - Számomra a GTD a mentőöv és a multitool egyben](#vegeredmeny)
+- [Végeredmény – Számomra a GTD a mentőöv és a multitool egyben](#vegeredmeny)
 
-### Kezdetek - Volt valami érdekes már első ránézésre a GTD -ben {#Kezdetek}
+### Kezdetek – Volt valami érdekes már első ránézésre a GTD -ben {#Kezdetek}
 
 Számtalan feladat menedzsment módszert próbáltam ki az évek alatt, a kötelezően elsajátítandón túl -amit az adott munkahelyen volt szükséges megismerni-, folytatva az "*ez érdekes lehet számomra is*" kategóriáig.<br>
 Mindig volt valami ami miatt részben vagy egészben elkopott, vagy egyszerűen nem tudott "beépülni" a mindennapokba az adott metodika. Azonban ez a **GTD rendszer megismerésével** (ha nem is egy csapásra!) **megváltozott**! Amilyen bonyolultnak tűnt, pontosan annyira egyszerű és fordítva!
@@ -56,7 +56,7 @@ Nyilván ezen a ponton már máshogyan álltam a könyvhöz is, teljesen más do
 Mivel már volt "némi tapasztalatom", ezért egy kicsit gyorsabban is ment az új rendszer kialakítása és a végeredmény jobb volt, mint az első alkalommal.<br>
 Nem szeretném az egész GTD életutamat itt kivesézni, de mire eljutottam arra a pontra, hogy megnyitom a feladatkezelő szoftvert amit használok, és az aktuális céljaimat priorizálva tudom a feladataimat előrébb vagy hátrébb rakni, az több év volt az esetemben!
 
-### Végeredmény - Számomra a GTD a mentőöv és a multitool egyben {#vegeredmeny}
+### Végeredmény – Számomra a GTD a mentőöv és a multitool egyben {#vegeredmeny}
 
 Így, hogy már tudom milyen szuper érzés, hogy egyáltalán nincs bennem az a nyomasztó gondolat, hogy valamit elfelejtek/ nem csinálok meg. Tudom, hogy ami szükséges az rögzítve van! Pontosan tudom mit hol keressek, és megszűnt a "valakitől valamikor kaptam valamit, de nem találom"!
 

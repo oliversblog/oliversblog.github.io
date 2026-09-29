@@ -1,5 +1,5 @@
 ---
-title: "Things 3 - A legjobb GTD szoftver Apple környezetben"
+title: "Things 3 – A legjobb GTD szoftver Apple környezetben"
 date: 2023-08-23 20:34:06 +0200
 description: "Todoist után a Things 3 lett a GTD-rendszerem alapja. Az első tapasztalataim és az 5 kedvenc funkcióm, amelyek miatt a heti áttekintés is élvezetes lett."
 categories: ["GTD"]
@@ -15,12 +15,12 @@ excerpt_separator: "<!--more-->"
 
 - [Előzmények](#elozmenyek)
 - [Első tapasztalatok](#elso-tapasztalatok)
-- [TOP 5 kedvenc feature - Többek között ezekért imádom megnyitni minden alkalommal](#TOP5-kedvenc)
-  - [Körültekintő fejlesztés - Nincs esztelen funkció áradat](#korultekinto-fejlesztes)
-  - [Kereső - Nem csak gyors, hanem jól felszerelt is](#kereso)
+- [TOP 5 kedvenc feature – Többek között ezekért imádom megnyitni minden alkalommal](#TOP5-kedvenc)
+  - [Körültekintő fejlesztés – Nincs esztelen funkció áradat](#korultekinto-fejlesztes)
+  - [Kereső – Nem csak gyors, hanem jól felszerelt is](#kereso)
   - [GTD rendszerre szabva](#GTD-rendszerre)
-  - [Markdown - Szép, szerkesztett szöveg mind felett](#markdown)
-  - [Rögzítés - Minden eszközön egyszerű, gyors és kényelmes](#rogzites)
+  - [Markdown – Szép, szerkesztett szöveg mind felett](#markdown)
+  - [Rögzítés – Minden eszközön egyszerű, gyors és kényelmes](#rogzites)
 - [Összefoglaló](#osszefoglalo)
 
 ## Előzmények {#elozmenyek}
@@ -60,11 +60,11 @@ Ez egy akkora löketet adott a saját GTD rendszerem, és ezáltal a tényleges 
 
 Az évek alatt összegyűjtött tapasztalatot igyekszem a lehető legrészletesebben átadni egy kurzus formájában, annak akit érdekel!
 
-## TOP 5 kedvenc feature - Többek között ezekért imádom megnyitni minden alkalommal {#TOP5-kedvenc}
+## TOP 5 kedvenc feature – Többek között ezekért imádom megnyitni minden alkalommal {#TOP5-kedvenc}
 
-### Körültekintő fejlesztés - Nincs esztelen funkció áradat {#korultekinto-fejlesztes}
+### Körültekintő fejlesztés – Nincs esztelen funkció áradat {#korultekinto-fejlesztes}
 
-Ez tipikusan azon applikációk közé tartozik amik nincsenek telezsúfolva funkciókkal, mondván “mindenki azt használ belőle amit akar” hanem eldöntötték, hogy pontosan miként épüljön fel és ezen nem fognak egy új funkció kedvéért változtatni. Ez többek között azért is fontos számomra, mert egyik frissítés sem fogja azt eredményezni, hogy drasztikusan megváltozik a kezelőfelület és/vagy annyi új funkció lesz, hogy szinte újra kell tanulni a programot. Nagyon körültekintő fejlesztői csapat áll a Things 3 mögött, ami - az akkor már több mint 5 éve tartó - Evernote használat után egy igazi felüdülés volt.<br>
+Ez tipikusan azon applikációk közé tartozik amik nincsenek telezsúfolva funkciókkal, mondván “mindenki azt használ belőle amit akar” hanem eldöntötték, hogy pontosan miként épüljön fel és ezen nem fognak egy új funkció kedvéért változtatni. Ez többek között azért is fontos számomra, mert egyik frissítés sem fogja azt eredményezni, hogy drasztikusan megváltozik a kezelőfelület és/vagy annyi új funkció lesz, hogy szinte újra kell tanulni a programot. Nagyon körültekintő fejlesztői csapat áll a Things 3 mögött, ami – az akkor már több mint 5 éve tartó – Evernote használat után egy igazi felüdülés volt.<br>
 Így vannak olyan évek óta húzódó funkció kérelmek amiket még mindig nem építettek bele, pedig felhasználói igény van rá. Ilyen pl.: fájl csatolási lehetőség. Ezt jó pár éve kérik rendszeresen a social media csatornáikon, de ennek egyelőre még nem tettek eleget.
 
 > Az számomra egyáltalán nem probléma, hogy nincs fájl csatolási lehetőség, mert megvannak azok a helyek ahol tárolom a különböző fájljaimat, így minden esetben egy linket adok hozzá a megfelelő feladathoz.
@@ -81,7 +81,7 @@ Viszont olyan kommunikációjuk van, hogy attól eldobom az agyam, mert annyira 
 
 Ami még számomra egy fontos kérdés volt, hogy vajon mennyi eltérés lesz az egyes platformokra szánt verziók között? 99,9% -ban ugyanazt tudja a Mac és iPhone és iPad verziók. Amik vannak különbségek azok az adott eszközön futtatott rendszer vagy maga az eszköz sajátosságaiból fakadnak.
 
-### Kereső - Nem csak gyors, hanem jól felszerelt is {#kereso}
+### Kereső – Nem csak gyors, hanem jól felszerelt is {#kereso}
 
 Elképesztően fontos egy feladatkezelő alkalmazásban, hogy a kereső megfelelő találatokat adjon az adott keresésre és ezt lehetőleg minél gyorsabban. Ez az elvárás magasan teljesítve van, mert a keresőbe bármit írok gyakorlatilag azonnal adja a találatokat. Itt viszont továbbment a fejlesztőcsapat, mert vannak olyan keresési kifejezések amik más-más dimenzióban listázzák ki a feladatokat és projecteket.<br>
 Ilyen például a *Deadlines* vagy a *Logged Projects és a Repeating* is többek között, amik a keresést, de főként a feladatok és projectek áttekintését teszi elképesztően gyorssá és hatékonnyá! Pont annyi és pont olyan lehetőségek vannak amikre szükség van!
@@ -105,7 +105,7 @@ Azonban amikor van 20 percem és olyan környezetben vagyok, hogy tudok nyugodta
 
 Alapvetően semmi újító nincs abban, hogy címkékkel lehet ellátni feladatokat, az azonban már viszonylag ritka, hogy ez **nem túlbonyolítva vagy a végletekig leegyszerűsítve** érhető el. Magában a Mac OS / Finder -ben is használom a címkeket, és mivel nincs túlbonyolítva ezért tényleg könnyen és egyszerűen használható, viszont ott vannak lehetőségek amik azért hiányoznak. Magával a címkek használatával kapcsolatban nekem az a tapasztalatom, hogy inkább legyen egyszerűbb és hiányozzanak lehetőségek, mint telis tele legyen zsúfolva mindenféle lehetőséggel. A túlzsúfoltság, a lehetőségek tekintetében, a címkék használata közben főként azoknak a power-usereknek nyújt segítséget akiknek valami miatt szükséges a mélyebb kategorizálási lehetőségek. Azonban minden másnak véleményem szerint csak egy plusz zavaró tényező, ami egy hatékonyságot növelő szoftver esetén nem túl optimális.
 
-### Markdown - Szép, szerkesztett szöveg mind felett {#markdown}
+### Markdown – Szép, szerkesztett szöveg mind felett {#markdown}
 
 A markdown is egy régóta várt funkció volt, amit néhány éve meg is kaptunk nagyon örömünkre! Aki ismeri, az szinte biztos, hogy használja is, és aki használja pontosan tudja mennyire gyorsan lehet vele szöveget szerkeszteni amit utána számos más helyen is fel lehet használni (ha úgy kívánja a helyzet), mert nagyon sok szerkesztő képes kezelni ezt a szerkesztési metódust.
 
@@ -115,7 +115,7 @@ Ennek az előnye akkor érezhető igazán amikor valami sokáig tartó és/vagy 
 
 {% include kep.html src="/assets/images/things-3-a-legjobb-gtd-szoftver-apple-kornyezetben/markdown-2.png" alt="Markdownnal formázott feladatjegyzet a Things 3-ban: címsorok, félkövér és dőlt szöveg, felsorolás, számozott lista" caption="Forrás: culturedcode.com" width="1340" height="1340" %}
 
-### Rögzítés - Minden eszközön egyszerű, gyors és kényelmes {#rogzites}
+### Rögzítés – Minden eszközön egyszerű, gyors és kényelmes {#rogzites}
 
 Ez egy sarkalatos pont az feladatkezelő applikációk világában, mert egyáltalán nem mindegy hány kattintásból/lépésből tudsz akár egy hirtelen jött ötletet akár egy emailben lévő szöveget rögzíteni. Vannak akiknél elképesztően túl van bonyolítva a rögzítés folyamat, és éppen ezért az ember nem szívesen használja **minden esetben,** márpedig ha nem mindent rögzítesz akkor szinte semmit se rögzítesz és nem fogod tudni megőrizni a kontrollt a feladataid felett. (Erről részletesebben a [GTD könyvben](https://hvgkonyvek.hu/konyv/hatekonysagnoveles-stresszmentesen-gtd) olvashatsz)
 
