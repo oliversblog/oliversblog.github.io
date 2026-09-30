@@ -1,0 +1,31 @@
+{%- if jekyll.environment == "production" and site.gtm_id and site.gtm_id != "" %}
+{%- if page.layout == "post" %}{% assign dl_tipus = "post" %}
+{%- elsif page.layout == "home" %}{% assign dl_tipus = "home" %}
+{%- elsif page.kategoria or page.url == "/kategoriak/" %}{% assign dl_tipus = "category" %}
+{%- elsif page.url == "/archivum/" %}{% assign dl_tipus = "archive" %}
+{%- elsif page.url == "/cimkek/" %}{% assign dl_tipus = "tag" %}
+{%- elsif page.url == "/404.html" %}{% assign dl_tipus = "404" %}
+{%- else %}{% assign dl_tipus = "page" %}{% endif %}
+{%- if page.layout == "post" %}{% assign dl_kategoria = page.categories | first | default: "" %}
+{%- elsif page.kategoria %}{% assign dl_kategoria = page.kategoria %}
+{%- else %}{% assign dl_kategoria = "" %}{% endif %}
+{%- if page.layout == "post" and page.tags.size > 0 %}{% assign dl_cimkek = page.tags | join: "|" %}{% else %}{% assign dl_cimkek = "" %}{% endif %}
+<script>
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  page_type: {{ dl_tipus | jsonify }},
+  content_category: {{ dl_kategoria | jsonify }},
+  content_tags: {{ dl_cimkek | jsonify }},
+  content_author: {{ site.author.name | jsonify }}
+{%- if page.layout == "post" %},
+  content_published: {{ page.date | date: "%Y-%m-%d" | jsonify }},
+  content_modified: {{ page.last_modified_at | default: page.date | date: "%Y-%m-%d" | jsonify }}
+{%- endif %}
+});
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer',{{ site.gtm_id | jsonify }});</script>
+{%- endif -%}

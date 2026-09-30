@@ -14,8 +14,8 @@ paginate_path: /oldal/:num/
 
 # Élesítve (4.2): false. Egyes oldalak noindexe a front matterben (robots: noindex).
 site_noindex: false
-# Amíg üres, nincs mérőkód.
-gtm_id: ""
+# GTM-konténer (5.4). Mérőkód csak éles buildben (JEKYLL_ENV=production); ha üres, nincs mérőkód.
+gtm_id: "GTM-MRKLZV37"
 # Search Console (4.4 lépés): URL-előtag tulajdon, HTML-címkés ellenőrzés.
 webmaster_verifications:
   google: "EU7sUYwDEGrCh4JR2U8hHbfAs0L9DPxOLWskJXBFQkE"
