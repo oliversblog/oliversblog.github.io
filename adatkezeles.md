@@ -13,7 +13,7 @@ Ez egy személyes blog. Nincs regisztráció, hírlevél, hozzászólás vagy ű
 
 - a GitHub, amely az oldalt kiszolgálja;
 - a CookieYes, amely a sütikkel kapcsolatos döntésedet kezeli;
-- a Google Tag Manager és – ha hozzájárulsz – a Google Analytics, amelyekkel a látogatottságot mérem;
+- a Google Tag Manager és – ha hozzájárulsz – a Google Analytics, amelyek a látogatottságot mérik;
 - a Casio, amelynek weboldaláról az egyik bejegyzés egy képet tölt be.
 
 ## 2. Ki kezeli az adataidat?
@@ -44,7 +44,7 @@ Az első látogatáskor sütibanner jelenik meg. A szükséges sütik mindig be 
 
 - **Cél:** a döntésed megjegyzése és a hozzájárulás igazolása.
 - **Jogalap:** jogi kötelezettség (GDPR 6. cikk (1) bekezdés c) pont – a 7. cikk (1) bekezdése szerint a hozzájárulást igazolni kell).
-- **Időtartam:** a süti 1 évig marad meg. A naplót a CookieYes addig őrzi, amíg a szolgáltatását használom; ha a szerződés megszűnik, 60 napon belül törli.
+- **Időtartam:** a süti 1 évig marad meg. A naplót a CookieYes addig őrzi, amíg az adatkezelő a szolgáltatást használja; ha a szerződés megszűnik, 60 napon belül törli.
 - **Ki kezeli (adatfeldolgozó):** CookieYes Limited (3 Warren Yard, Warren Park, Wolverton Mill, Milton Keynes, MK12 5NW, Egyesült Királyság).
 
 A döntésedet bármikor megváltoztathatod az oldal alján lévő **Süti-beállítások** linkkel.
@@ -67,7 +67,7 @@ A látogatottságot a Google Analytics 4 méri, amelyet a Google Tag Manager tö
 
 A Google a hozzávetőleges helyedet (ország, város) az IP-címedből állapítja meg; az Európai Unióból érkező látogatók IP-címét a saját tájékoztatója szerint nem naplózza és nem tárolja.
 
-**Google Signals.** A Google Analyticsben be van kapcsolva a Google Signals, a Google egyik hirdetési funkciója. Ha be vagy jelentkezve a Google-fiókodba, és a fiókodban engedélyezted a hirdetések személyre szabását, a Google a látogatásodat a fiókodhoz kapcsolódó adatokkal is összekapcsolhatja. Ehhez a Google Analytics saját sütijeit a Google-fiókodhoz tartozó azonosítókkal együtt használja. Ebből a Google összesített képet ad arról, hogyan használják az oldalt több eszközön és böngészőn, valamint demográfiai és érdeklődési adatokat. Google Ads-fiókot nem használok, és hirdetést nem jelenítek meg.
+**Google Signals.** A Google Analyticsben be van kapcsolva a Google Signals, a Google egyik hirdetési funkciója. Ha be vagy jelentkezve a Google-fiókodba, és a fiókodban engedélyezted a hirdetések személyre szabását, a Google a látogatásodat a fiókodhoz kapcsolódó adatokkal is összekapcsolhatja. Ehhez a Google Analytics saját sütijeit a Google-fiókodhoz tartozó azonosítókkal együtt használja. Ebből a Google összesített képet ad arról, hogyan használják az oldalt több eszközön és böngészőn, valamint demográfiai és érdeklődési adatokat.
 
 **Leiratkozás:**
 
@@ -78,7 +78,7 @@ A Google a hozzávetőleges helyedet (ország, város) az IP-címedből állapí
 
 - **Cél:** a blog látogatottságának mérése.
 - **Jogalap:** a hozzájárulásod (GDPR 6. cikk (1) bekezdés a) pont; az elektronikus hírközlésről szóló 2003. évi C. törvény 155. § (4) bekezdése).
-- **Időtartam:** az Analytics-adatokat 14 hónapig őrzöm meg, utána a Google törli. A sütik lejárati ideje a 4. pontban lévő listában látható.
+- **Időtartam:** az Analytics-adatok megőrzési ideje 14 hónap, utána a Google törli őket. A sütik lejárati ideje a 4. pontban lévő listában látható.
 - **Ki kezeli (adatfeldolgozó):** Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Írország).
 
 A hozzájárulásodat bármikor visszavonhatod a **Süti-beállítások** linkkel; ez a visszavonás előtti adatkezelést nem érinti.
@@ -116,7 +116,7 @@ A GDPR alapján jogod van:
 - **tiltakozni** a jogos érdeken alapuló adatkezelés ellen (21. cikk);
 - a hozzájárulásodat bármikor **visszavonni** (7. cikk (3) bekezdés).
 
-Kérésedet a 2. pontban megadott e-mail-címre küldd. A GDPR 12. cikk (3) bekezdése szerint legfeljebb egy hónapon belül válaszolok.
+Kérésedet a 2. pontban megadott e-mail-címre küldd. A GDPR 12. cikk (3) bekezdése szerint az adatkezelő legfeljebb egy hónapon belül válaszol.
 
 ## 7. Jogorvoslat
 
@@ -133,4 +133,4 @@ Bírósághoz is fordulhatsz; a per – választásod szerint – a lakóhelyed 
 
 ## 8. Változások
 
-Ha az adatkezelés változik, ezt a tájékoztatót frissítem, és a tetején átírom a hatály dátumát.
+Ha az adatkezelés változik, ez a tájékoztató frissül, és a tetején a hatály dátuma is változik.
