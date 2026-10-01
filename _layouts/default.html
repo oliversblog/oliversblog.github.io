@@ -16,6 +16,10 @@
   </div>
 </div>
 <script>
+// Süti-beállítások: a beállításokat a CookieYes nyitja újra; a „#” ne ugorjon az oldal tetejére
+document.addEventListener('click', function (e) {
+  if (e.target.closest && e.target.closest('a.cky-banner-element')) e.preventDefault();
+});
 (function () {
   var gomb = document.querySelector('.menu-gomb');
   var sav = document.querySelector('.oldalsav');
