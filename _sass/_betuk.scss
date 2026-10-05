@@ -1,22 +1,20 @@
 @charset "UTF-8";
 // Betűk – saját tárhelyről (assets/fonts/), SIL Open Font License 1.1.
-// Lato 2.015 (módosítatlan; a 2.x-ben van ő és ű), Raleway 700 két részfájlban.
+// Lato 2.015, két részfájlra szűkítve (a fájlon belüli név a Reserved Font Name miatt
+// „Blog Sans”): a latin részben az ő és az ű is benne van, így magyar szövegnél csak az töltődik le.
+// Raleway 700 két részfájlban.
 
-@font-face {
-  font-family: "Lato"; font-style: normal; font-weight: 400; font-display: swap;
-  src: url("/assets/fonts/lato-400.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Lato"; font-style: italic; font-weight: 400; font-display: swap;
-  src: url("/assets/fonts/lato-400-italic.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Lato"; font-style: normal; font-weight: 700; font-display: swap;
-  src: url("/assets/fonts/lato-700.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Lato"; font-style: italic; font-weight: 700; font-display: swap;
-  src: url("/assets/fonts/lato-700-italic.woff2") format("woff2");
+$latin: "U+0000-00FF, U+0131, U+0150-0153, U+0170-0171, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2190-2199, U+2212, U+2215, U+FEFF, U+FFFD";
+$latin-ext: "U+0100-0130, U+0132-014F, U+0154-016F, U+0172-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF";
+
+@each $suly, $stilus, $fajl in (400 normal "lato-400", 400 italic "lato-400-italic", 700 normal "lato-700", 700 italic "lato-700-italic") {
+  @each $resz, $tartomany in ("latin": $latin, "latin-ext": $latin-ext) {
+    @font-face {
+      font-family: "Lato"; font-style: $stilus; font-weight: $suly; font-display: swap;
+      src: url("/assets/fonts/#{$fajl}-#{$resz}.woff2") format("woff2");
+      unicode-range: #{$tartomany};
+    }
+  }
 }
 @font-face {
   font-family: "Raleway"; font-style: normal; font-weight: 700; font-display: swap;
@@ -28,3 +26,6 @@
   src: url("/assets/fonts/raleway-700-latin-ext.woff2") format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
+
+// A süti-banner nyilacskái (üres <i>) dőlt betűt kérnének – ettől minden oldalon letöltődne a dőlt Lato.
+.cky-accordion-chevron i { font-style: normal; }
