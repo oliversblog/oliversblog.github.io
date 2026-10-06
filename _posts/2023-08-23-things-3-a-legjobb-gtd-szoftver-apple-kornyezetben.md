@@ -4,10 +4,10 @@ date: 2023-08-23 20:34:06 +0200
 description: "Todoist után a Things 3 lett a GTD-rendszerem alapja. Az első tapasztalataim és az 5 kedvenc funkcióm, amelyek miatt a heti áttekintés is élvezetes lett."
 categories: ["GTD"]
 image:
-  path: /assets/images/things-3-a-legjobb-gtd-szoftver-apple-kornyezetben/website-hero-all-new-things.png
+  path: /assets/images/things-3-a-legjobb-gtd-szoftver-apple-kornyezetben/website-hero-all-new-things-borito.png
   alt: "A Things 3 bemutatóképe: az alkalmazás logója és az oldalsó menü (Inbox, Today, Upcoming, Anytime, Someday)"
   width: 1920
-  height: 1440
+  height: 1080
 excerpt_separator: "<!--more-->"
 ---
 

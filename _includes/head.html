@@ -10,4 +10,5 @@
 {% feed_meta %}
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preload" href="{{ "/assets/fonts/lato-400-latin.woff2" | relative_url }}" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+{%- capture stilus %}@import "betuk", "tokenek", "alap", "elrendezes", "kozos", "poszt", "oldalak", "nyomtatas";{% endcapture %}
+<style>{{ stilus | scssify | strip }}</style>

@@ -23,7 +23,7 @@ webmaster_verifications:
 markdown: kramdown
 highlighter: rouge
 
-# Egyetlen tömörített CSS-fájl (assets/css/main.scss + _sass/)
+# Tömörített CSS a _sass/ fájlokból, minden oldal <head>-jébe ágyazva (_includes/head.html)
 sass:
   style: compressed
 

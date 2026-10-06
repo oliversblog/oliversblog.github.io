@@ -5,11 +5,10 @@ last_modified_at: 2025-06-10 20:41:21 +0200
 description: "Miért nem vettem új Apple Watch-ot, és miért lett helyette Casio G-Shock Rangeman (GW-9400)? Szempontok, ABC-funkciók és tapasztalatok túrán, hegyen."
 categories: ["Eszközök"]
 image:
-  path: /assets/images/casio-g-shock-vs-apple-watch-valtani-akartam/img_3462-1.jpeg
+  path: /assets/images/casio-g-shock-vs-apple-watch-valtani-akartam/img_3462-1-borito.jpeg
   alt: "Casio G-Shock Rangeman GW-9400 a csuklón, a kijelzőn a légnyomás-változás jelzése"
   width: 1500
-  height: 2000
-  fokusz: "50% 55%"
+  height: 844
 ---
 
 ## Előzmények
